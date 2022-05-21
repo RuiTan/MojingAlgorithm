@@ -55,7 +55,7 @@ $(document).ready(function () {
             let recall = data['recall'][0]
             let f1 = pre.slice()
             f1.forEach((elem, index, f1) => {
-                f1[index] = (pre[index] * recall[index] / (pre[index] + recall[index]))
+                f1[index] = 2 * (pre[index] * recall[index] / (pre[index] + recall[index]))
             })
             let ctx1 = document.getElementById('modelChart1');
             new Chart(ctx1, {
