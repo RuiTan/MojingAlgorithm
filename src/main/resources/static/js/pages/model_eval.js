@@ -53,7 +53,7 @@ $(document).ready(function () {
             let oa = data['oa'][0]
             let pre = data['pre'][0]
             let recall = data['recall'][0]
-            let f1 = pre
+            let f1 = pre.slice()
             f1.forEach((elem, index, f1) => {
                 f1.push(pre[index] * recall[index] / (pre[index] + recall[index]))
             })
