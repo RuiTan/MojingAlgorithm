@@ -1,5 +1,6 @@
 
 let base_url = "http://47.102.43.156:8018/"
+// let base_url = "http://localhost:8008/"
 
 $(document).ready(function () {
     "use strict";
@@ -52,6 +53,10 @@ $(document).ready(function () {
             let oa = data['oa'][0]
             let pre = data['pre'][0]
             let recall = data['recall'][0]
+            let f1 = []
+            pre.forEach((elem, index, f1) => {
+                f1.push(pre[index] * recall[index] / (pre[index] + recall[index]))
+            })
             let ctx1 = document.getElementById('modelChart1');
             new Chart(ctx1, {
                 type: 'line',
@@ -77,6 +82,13 @@ $(document).ready(function () {
                         backgroundColors: backgroundColors[6],
                         borderWidth: 1,
                         label: 'Recall',
+                        fill: false
+                    }, {
+                        data: f1,
+                        borderColor: borderColors[8],
+                        backgroundColors: backgroundColors[8],
+                        borderWidth: 1,
+                        label: 'F1 Score',
                         fill: false
                     }]
                 },
