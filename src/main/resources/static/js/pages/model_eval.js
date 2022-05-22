@@ -206,7 +206,7 @@ $(document).ready(function () {
             datasets = []
             date = labels.slice(-size)
             let c0 = data['c0Rate'][0].slice(-size)
-            let classes = ['分类1（0-59）', '分类2（60-69）', '分类3（70-79）', '分类4（80-100）']
+            let classes = ['最不推荐（0-59）', '中等推荐（60-69）', '比较推荐（70-79）', '最推荐（80-100）']
             let c1 = data['c1Rate'][0].slice(-size)
             let c2 = data['c2Rate'][0].slice(-size)
             let c3 = data['c3Rate'][0].slice(-size)
