@@ -22,6 +22,7 @@ import java.util.*;
 /**
  * @author Administrator
  */
+@CrossOrigin
 @RestController
 public class IndexController {
     @Autowired
@@ -31,10 +32,10 @@ public class IndexController {
     @Autowired
     DatasetServiceImpl datasetService;
 
-    @GetMapping("/index")
-    public String index(){
-        return "index";
-    }
+//    @GetMapping("/index")
+//    public String index(){
+//        return "index";
+//    }
 
     @GetMapping("/model")
     public ResponseData model(@RequestParam int id){
